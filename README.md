@@ -37,9 +37,19 @@ that one URL:
 The GitHub Pages host runs in **preview mode**: it's marked `noindex` (so the demo
 doesn't compete with the real domains in search) and the form is disabled (it has
 no backend there). The real launch goes to Netlify with the three custom domains —
-see *Deploying* below. To enable the demo the first time, make sure GitHub Pages is
-allowed for this repo (Settings → Pages → Build and deployment → Source:
-**GitHub Actions**); the workflow auto-enables it on first run.
+see *Deploying* below.
+
+### One-time setup to turn the demo on
+
+GitHub won't let the Actions token enable Pages for the very first time, so flip it
+on once (takes ~10 seconds):
+
+1. Go to **Settings → Pages → Build and deployment**.
+2. Set **Source: GitHub Actions**.
+3. Re-run the latest "Deploy sample to GitHub Pages" workflow (Actions tab →
+   the run → **Re-run jobs**), or just push any commit.
+
+After that, every push to the deploy branch republishes the demo automatically.
 
 ## How it works
 

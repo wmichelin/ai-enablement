@@ -21,6 +21,12 @@ window.SITE_CONFIG = {
       "We help small and medium businesses across North Carolina put large language models to work on real, time-consuming work — without the hype, the risk, or an in-house AI team.",
     locationLine: "Working with businesses across North Carolina.",
     ctaNote: "Founding-client rates for the first NC businesses we partner with.",
+    // SEO
+    keywords:
+      "AI consulting North Carolina, LLM integration, AI for small business NC, ChatGPT for business, AI automation North Carolina",
+    areaServed: "North Carolina",
+    addressLocality: "Raleigh",
+    ogImage: "assets/og-nc.png",
   },
 
   "caryncai.com": {
@@ -34,6 +40,12 @@ window.SITE_CONFIG = {
       "A local partner helping Cary and Triangle-area small businesses adopt large language models for the repetitive text and document work eating up your team's day.",
     locationLine: "Based in Cary, NC — serving local businesses face to face.",
     ctaNote: "Founding-client rates for the first Cary businesses we partner with.",
+    // SEO
+    keywords:
+      "AI consultant Cary NC, AI for small business Cary, LLM integration Cary, AI automation Triangle NC, ChatGPT consultant Cary",
+    areaServed: "Cary, North Carolina",
+    addressLocality: "Cary",
+    ogImage: "assets/og-cary.png",
   },
 
   "rtpaisolutions.com": {
@@ -47,6 +59,12 @@ window.SITE_CONFIG = {
       "We help growing companies in RTP and across the Triangle identify high-ROI workflows and ship dependable, secure LLM integrations — measured by results, not slideware.",
     locationLine: "Serving the Research Triangle Park region.",
     ctaNote: "Founding-client rates for our first Triangle partners.",
+    // SEO
+    keywords:
+      "AI solutions RTP, LLM integration Research Triangle, AI consulting Durham NC, enterprise AI Triangle NC, AI automation RTP",
+    areaServed: "Research Triangle Park, North Carolina",
+    addressLocality: "Durham",
+    ogImage: "assets/og-rtp.png",
   },
 };
 

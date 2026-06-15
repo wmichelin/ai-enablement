@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /thanks.html
+
+Sitemap: https://ncartificialintelligence.com/sitemap.xml
+Sitemap: https://caryncai.com/sitemap.xml
+Sitemap: https://rtpaisolutions.com/sitemap.xml

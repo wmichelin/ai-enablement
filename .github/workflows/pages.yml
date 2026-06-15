@@ -1,0 +1,46 @@
+name: Deploy sample to GitHub Pages
+
+# Deploys the static site in /public to GitHub Pages so the painted-door
+# landing page can be previewed live. This is a DEMO host: main.js detects the
+# *.github.io domain and runs in preview mode (noindex, form disabled).
+# The real launch goes to Netlify with the three custom domains — see README.
+
+on:
+  push:
+    branches:
+      - claude/painted-door-test-f4rfdu
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

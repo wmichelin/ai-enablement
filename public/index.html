@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title data-bind="title">AI for small &amp; medium businesses</title>
     <meta name="description" data-bind="description" content="We help small and medium businesses put large language models to work on real, time-consuming work." />
+    <meta name="keywords" data-bind="keywords" content="" />
     <meta name="robots" content="index,follow" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <meta name="theme-color" data-bind="themeColor" content="#2563eb" />
+    <link rel="canonical" data-bind="canonical" href="" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph (filled per-domain by main.js) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" data-bind="brand" content="" />
+    <meta property="og:title" data-bind="ogTitle" content="" />
+    <meta property="og:description" data-bind="description" content="" />
+    <meta property="og:url" data-bind="canonical" content="" />
+    <meta property="og:image" data-bind="ogImageAbs" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" data-bind="ogTitle" content="" />
+    <meta name="twitter:description" data-bind="description" content="" />
+    <meta name="twitter:image" data-bind="ogImageAbs" content="" />
+
+    <!-- Structured data for local SEO (filled per-domain by main.js) -->
+    <script type="application/ld+json" id="ld-json">{}</script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
     <!--
@@ -133,14 +156,14 @@
             - "bot-field" is a honeypot for spam
             - "site_domain" / "site_brand" are filled by main.js so every lead is
               tagged with which domain/variant it came from (the whole point of the test)
-            - action="/thanks.html" sends people to a branded thank-you page
+            - action="thanks.html" sends people to a branded thank-you page
           -->
           <form
             name="ai-interest"
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            action="/thanks.html"
+            action="thanks.html"
           >
             <input type="hidden" name="form-name" value="ai-interest" />
             <input type="hidden" name="site_domain" value="" />
@@ -197,7 +220,7 @@
       <p class="footer-legal">&copy; <span data-bind="year">2026</span> <span data-bind="brand">AI Integration Services</span>. All rights reserved.</p>
     </footer>
 
-    <script src="/assets/config.js"></script>
-    <script src="/assets/main.js"></script>
+    <script src="assets/config.js"></script>
+    <script src="assets/main.js"></script>
   </body>
 </html>

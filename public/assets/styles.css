@@ -386,6 +386,21 @@ a {
   margin: 0;
 }
 
+/* ---------- Preview banner (demo only) ---------- */
+.preview-banner {
+  background: #0f172a;
+  color: #e2e8f0;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+}
+
+.preview-banner a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 560px) {
   .field-row {

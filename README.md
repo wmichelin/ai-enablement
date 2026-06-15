@@ -21,6 +21,26 @@ All three domains serve the **same page**, customized at runtime by hostname:
 Every lead is **tagged with the domain it came from** (`site_domain` / `site_brand`
 hidden fields), so you can compare conversion across the three names.
 
+## Live sample (GitHub Pages)
+
+A live preview deploys automatically via GitHub Actions to:
+
+**https://wmichelin.github.io/ai-enablement/**
+
+Because branding is chosen by hostname, use `?site=` to preview each variant from
+that one URL:
+
+- NC: <https://wmichelin.github.io/ai-enablement/?site=nc>
+- Cary: <https://wmichelin.github.io/ai-enablement/?site=cary>
+- RTP: <https://wmichelin.github.io/ai-enablement/?site=rtp>
+
+The GitHub Pages host runs in **preview mode**: it's marked `noindex` (so the demo
+doesn't compete with the real domains in search) and the form is disabled (it has
+no backend there). The real launch goes to Netlify with the three custom domains —
+see *Deploying* below. To enable the demo the first time, make sure GitHub Pages is
+allowed for this repo (Settings → Pages → Build and deployment → Source:
+**GitHub Actions**); the workflow auto-enables it on first run.
+
 ## How it works
 
 - **One static site**, deployed once, with all three domains pointed at it.
@@ -100,6 +120,27 @@ free, add a lightweight, privacy-friendly analytics tag (recommended:
 
 Drive traffic evenly (e.g. equal ad budget or rotating links) so the comparison
 is fair.
+
+## SEO
+
+Each domain is search-optimized independently, generated per-variant at runtime:
+
+- **Per-variant `<title>`, meta description, and keywords** tuned to each name and
+  location (e.g. "AI consultant Cary NC" vs "AI solutions RTP").
+- **Self-referencing canonical** on each domain — each is canonical for itself, the
+  standard way to handle near-duplicate content across domains.
+- **Open Graph + Twitter Card** tags with a **custom share image per variant**
+  (`assets/og-*.png`, 1200×630) so links unfurl nicely in social/Slack/iMessage.
+- **JSON-LD structured data** (`ProfessionalService`) with `areaServed` and a local
+  address region — this is what powers local/map search results, which matters for
+  the geographic angle of these names.
+- **`robots.txt`** + **`sitemap.xml`** listing all three homepages.
+- `theme-color` set to each variant's accent.
+
+After launch, submit `sitemap.xml` for each domain in **Google Search Console**
+(and Bing Webmaster Tools) to get them indexed. Edit per-variant SEO copy in
+`public/assets/config.js` (the `keywords`, `areaServed`, `addressLocality`, and
+`ogImage` fields).
 
 ## Editing copy
 

@@ -1,45 +1,42 @@
-# AI Enablement — Painted Door Test
+# AI Enablement — Landing Site
 
-A single templated landing page used to **painted-door test three domain names**
-for an LLM-integration services business targeting small & medium businesses in
-the North Carolina / Research Triangle area.
+A single templated landing page for an LLM-integration services business serving
+small & medium businesses in the North Carolina / Research Triangle area. One
+static site is deployed once and served from three domains, each rendering the
+same page with its own brand, copy, and accent color.
 
-The goal: stand up a credible page for each name, send a little traffic, and see
-**which name/positioning gets the most "I'm interested" form submissions** —
-before building any actual service.
-
-## The three variants
+## The three brands
 
 All three domains serve the **same page**, customized at runtime by hostname:
 
-| Domain | Brand | Angle | Accent |
+| Domain | Brand | Focus | Accent |
 | --- | --- | --- | --- |
 | `ncartificialintelligence.com` | NC Artificial Intelligence | Statewide North Carolina | Blue |
-| `caryncai.com` | Cary AI | Hyper-local, Cary NC | Teal |
+| `caryncai.com` | Cary AI | Local, Cary NC | Teal |
 | `rtpaisolutions.com` | RTP AI Solutions | Research Triangle / tech corridor | Indigo |
 
-Every lead is **tagged with the domain it came from** (`site_domain` / `site_brand`
-hidden fields), so you can compare conversion across the three names.
+Each lead is tagged with the domain it came from (`site_domain` / `site_brand`
+hidden fields) so submissions can be attributed to the right site.
 
-## Live sample (GitHub Pages)
+## Live preview (GitHub Pages)
 
-A live preview deploys automatically via GitHub Actions to:
+A preview deploys automatically via GitHub Actions to:
 
 **https://wmichelin.github.io/ai-enablement/**
 
-Because branding is chosen by hostname, use `?site=` to preview each variant from
+Because branding is chosen by hostname, use `?site=` to preview each brand from
 that one URL:
 
 - NC: <https://wmichelin.github.io/ai-enablement/?site=nc>
 - Cary: <https://wmichelin.github.io/ai-enablement/?site=cary>
 - RTP: <https://wmichelin.github.io/ai-enablement/?site=rtp>
 
-The GitHub Pages host runs in **preview mode**: it's marked `noindex` (so the demo
-doesn't compete with the real domains in search) and the form is disabled (it has
-no backend there). The real launch goes to Netlify with the three custom domains —
-see *Deploying* below.
+The GitHub Pages host runs in **preview mode**: it's marked `noindex` (so the
+preview doesn't compete with the production domains in search) and the form is
+disabled (it has no backend there). Production runs on Netlify with the three
+custom domains — see *Deploying* below.
 
-### One-time setup to turn the demo on
+### One-time setup to turn the preview on
 
 GitHub won't let the Actions token enable Pages for the very first time, so flip it
 on once (takes ~10 seconds):
@@ -49,15 +46,15 @@ on once (takes ~10 seconds):
 3. Re-run the latest "Deploy sample to GitHub Pages" workflow (Actions tab →
    the run → **Re-run jobs**), or just push any commit.
 
-After that, every push to the deploy branch republishes the demo automatically.
+After that, every push to the deploy branch republishes the preview automatically.
 
 ## How it works
 
 - **One static site**, deployed once, with all three domains pointed at it.
 - `public/assets/config.js` holds the per-domain copy, brand, and accent color.
 - `public/assets/main.js` reads `window.location.hostname` and applies the right
-  variant — fills in headings, colors, meta tags, and the form's hidden domain tag.
-- The lead form is **plain static HTML** so Netlify detects it automatically and
+  brand — fills in headings, colors, meta tags, and the form's hidden domain tag.
+- The contact form is **plain static HTML** so Netlify detects it automatically and
   **emails each submission to you** — no backend, no API keys, free.
 
 ```
@@ -68,7 +65,7 @@ public/
   robots.txt
   assets/
     config.js       # <-- edit per-domain copy here
-    main.js         # applies the right variant at runtime
+    main.js         # applies the right brand at runtime
     styles.css
 netlify.toml        # publish config (no build step)
 ```
@@ -80,8 +77,7 @@ handling (100 submissions/month), and **built-in email notifications** to your
 inbox — no third-party services or secrets required.
 
 ### 1. Push this repo to GitHub
-Already on branch `claude/painted-door-test-f4rfdu`. Merge to your default branch
-when ready.
+Merge the working branch into your default branch when ready.
 
 ### 2. Create the Netlify site
 1. Sign in at <https://app.netlify.com> (free account).
@@ -90,7 +86,7 @@ when ready.
    - Build command: *(empty)*
    - Publish directory: `public`
 4. Deploy. You'll get a `something.netlify.app` URL — open it to preview
-   (preview URLs fall back to the NC variant).
+   (preview URLs fall back to the NC brand).
 
 ### 3. Attach all three domains
 In **Site configuration → Domain management → Add a domain**, add:
@@ -104,51 +100,43 @@ Netlify lets one site have multiple custom domains (one primary + the rest as
 shows you at your registrar). Netlify provisions free HTTPS certs for all three.
 
 > Because branding is chosen by hostname at runtime, each domain automatically
-> renders its own variant — no separate deploys needed.
+> renders its own brand — no separate deploys needed.
 
 ### 4. Turn on email notifications for leads
 1. Submit the form once on the live site so Netlify registers it (named
    `ai-interest`).
 2. Go to **Site configuration → Forms → Form notifications → Add notification →
    Email notification**.
-3. Send to **wmichelin@gmail.com**. Done — every submission now emails you,
-   including the `site_domain` field so you know which name it came from.
+3. Set the destination address. Done — every submission now emails you, including
+   the `site_domain` field so you know which site produced it.
 
 You can also see/export all submissions under the **Forms** tab.
 
-## Reading the painted-door results
+## Analytics (optional)
 
-For each domain, compare **submissions ÷ visitors**. To get visitor counts for
-free, add a lightweight, privacy-friendly analytics tag (recommended:
-[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) or
-[GoatCounter](https://www.goatcounter.com/) — both free). Drop the snippet into
-`<head>` of `public/index.html`. Then:
-
-- **Highest conversion** = the name/positioning that resonates most.
-- The `site_domain` tag on each lead tells you which page produced it even though
-  they share one Netlify Forms inbox.
-
-Drive traffic evenly (e.g. equal ad budget or rotating links) so the comparison
-is fair.
+To track traffic per site for free, add a lightweight, privacy-friendly analytics
+tag (e.g. [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) or
+[GoatCounter](https://www.goatcounter.com/)). Drop the snippet into the `<head>`
+of `public/index.html`. The `site_domain` tag on each lead identifies which page
+produced it even though all sites share one Netlify Forms inbox.
 
 ## SEO
 
-Each domain is search-optimized independently, generated per-variant at runtime:
+Each domain is search-optimized independently, generated per-brand at runtime:
 
-- **Per-variant `<title>`, meta description, and keywords** tuned to each name and
+- **Per-brand `<title>`, meta description, and keywords** tuned to each name and
   location (e.g. "AI consultant Cary NC" vs "AI solutions RTP").
 - **Self-referencing canonical** on each domain — each is canonical for itself, the
   standard way to handle near-duplicate content across domains.
-- **Open Graph + Twitter Card** tags with a **custom share image per variant**
+- **Open Graph + Twitter Card** tags with a **custom share image per brand**
   (`assets/og-*.png`, 1200×630) so links unfurl nicely in social/Slack/iMessage.
 - **JSON-LD structured data** (`ProfessionalService`) with `areaServed` and a local
-  address region — this is what powers local/map search results, which matters for
-  the geographic angle of these names.
+  address region for local/map search results.
 - **`robots.txt`** + **`sitemap.xml`** listing all three homepages.
-- `theme-color` set to each variant's accent.
+- `theme-color` set to each brand's accent.
 
 After launch, submit `sitemap.xml` for each domain in **Google Search Console**
-(and Bing Webmaster Tools) to get them indexed. Edit per-variant SEO copy in
+(and Bing Webmaster Tools) to get them indexed. Edit per-brand SEO copy in
 `public/assets/config.js` (the `keywords`, `areaServed`, `addressLocality`, and
 `ogImage` fields).
 
@@ -163,8 +151,8 @@ step — edit, commit, push, and Netlify redeploys.
 ```bash
 cd public
 python3 -m http.server 8000
-# open http://localhost:8000  (renders the NC fallback variant)
+# open http://localhost:8000  (renders the NC fallback brand)
 ```
 
-To preview a specific variant locally, temporarily change the host lookup in
-`main.js`, or add a hosts-file entry pointing one of the domains to `127.0.0.1`.
+To preview a specific brand locally, append `?site=nc`, `?site=cary`, or
+`?site=rtp` to the URL.

@@ -1,4 +1,4 @@
-# Netlify configuration for the painted-door landing site.
+# Netlify configuration for the landing site.
 #
 # This is a plain static site (no build step). All three domains point at this
 # one deploy; per-domain branding is applied at runtime in /public/assets/main.js.

@@ -1,14 +1,14 @@
 name: Deploy sample to GitHub Pages
 
-# Deploys the static site in /public to GitHub Pages so the painted-door
-# landing page can be previewed live. This is a DEMO host: main.js detects the
-# *.github.io domain and runs in preview mode (noindex, form disabled).
-# The real launch goes to Netlify with the three custom domains — see README.
+# Deploys the static site in /public to GitHub Pages so the landing page can be
+# previewed live. This is a preview host: main.js detects the *.github.io domain
+# and runs in preview mode (noindex, form disabled).
+# Production runs on Netlify with the three custom domains — see README.
 
 on:
   push:
     branches:
-      - claude/painted-door-test-f4rfdu
+      - main
   workflow_dispatch:
 
 permissions:

@@ -1,13 +1,12 @@
 /*
- * Per-domain configuration for the painted-door test.
+ * Per-domain configuration.
  *
  * One static site is deployed once and pointed at all three domains. At runtime
  * main.js reads window.location.hostname and applies the matching config below,
- * so each domain renders the same page with slightly different branding, copy,
- * and accent color. This lets us A/B/C the *names* against the same offer and
- * see which one converts.
+ * so each domain renders the same page with its own branding, copy, and accent
+ * color.
  *
- * To add or tweak a variant, edit the object for that hostname.
+ * To add or tweak a brand, edit the object for that hostname.
  */
 window.SITE_CONFIG = {
   "ncartificialintelligence.com": {

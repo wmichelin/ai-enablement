@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-bind="title">AI for small &amp; medium businesses</title>
+    <meta name="description" data-bind="description" content="We help small and medium businesses put large language models to work on real, time-consuming work." />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <!--
+      Painted-door test landing page.
+      Branding/copy is filled in at runtime by /assets/main.js based on the
+      domain it is served from. The lead form below is intentionally STATIC
+      HTML so Netlify's form detection picks it up at deploy time.
+    -->
+
+    <header class="site-header">
+      <a class="wordmark" href="#top">
+        <span class="wordmark-mark" data-bind="wordmark">AI</span>
+      </a>
+      <a class="header-cta" href="#interest">Get a free audit</a>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero">
+        <p class="eyebrow" data-bind="region">For local businesses</p>
+        <h1 data-bind="headline">Practical AI for small &amp; medium businesses</h1>
+        <p class="subhead" data-bind="subhead">
+          We help small and medium businesses put large language models to work on
+          real, time-consuming work — without the hype, the risk, or an in-house AI team.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#interest">Get your free AI workflow audit</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="hero-note" data-bind="ctaNote"></p>
+      </section>
+
+      <!-- Problem -->
+      <section class="band">
+        <div class="band-inner">
+          <h2>You know AI could help. Acting on it is the hard part.</h2>
+          <p class="lede">
+            Most teams sense the value but stall: unclear use cases, fear of data and
+            security risks, no in-house AI skills, and a noisy market of tools that are
+            impossible to evaluate. We remove the guesswork and do the work.
+          </p>
+        </div>
+      </section>
+
+      <!-- Offerings -->
+      <section class="section" id="services">
+        <h2 class="section-title">Where we typically save teams the most time</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Customer support automation</h3>
+            <p>Draft replies, triage inboxes, and answer common questions from your own knowledge — with a human in the loop.</p>
+          </div>
+          <div class="card">
+            <h3>Document drafting</h3>
+            <p>Turn templates, notes, and source material into first-draft contracts, proposals, and reports in minutes.</p>
+          </div>
+          <div class="card">
+            <h3>Internal knowledge search</h3>
+            <p>Let your team ask questions in plain English and get answers from your docs, policies, and past work.</p>
+          </div>
+          <div class="card">
+            <h3>Data extraction</h3>
+            <p>Pull structured data out of PDFs, emails, and forms so people stop copying fields by hand.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="band" id="how">
+        <div class="band-inner">
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-num">1</span>
+              <div>
+                <h3>Free workflow audit</h3>
+                <p>A short, no-obligation review of your day-to-day work to find the highest-ROI places AI can help.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <div>
+                <h3>We build and integrate</h3>
+                <p>A fixed-scope implementation that fits how your team already works — and that they'll actually use.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <div>
+                <h3>Ongoing optimization</h3>
+                <p>We monitor, refine, and expand what's working so the value compounds instead of fading.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Trust / security -->
+      <section class="section trust">
+        <div class="trust-inner">
+          <h2 class="section-title">Your data stays yours</h2>
+          <p class="lede center">
+            Security and data-handling aren't an afterthought — they're part of the offer
+            from day one. We'll walk you through exactly how your information is handled
+            before anything touches a model, and give you a clear policy you can keep on file.
+          </p>
+        </div>
+      </section>
+
+      <!-- Interest form (painted door) -->
+      <section class="section form-section" id="interest">
+        <div class="form-card">
+          <h2>Get your free AI workflow audit</h2>
+          <p class="form-intro">
+            Tell us a little about your business and the work that eats up the most time.
+            We'll follow up to schedule a free, no-pressure audit.
+          </p>
+
+          <!--
+            Netlify Forms: this form is detected automatically at deploy time.
+            - data-netlify="true" enables capture
+            - the hidden "form-name" input must match the form's name
+            - "bot-field" is a honeypot for spam
+            - "site_domain" / "site_brand" are filled by main.js so every lead is
+              tagged with which domain/variant it came from (the whole point of the test)
+            - action="/thanks.html" sends people to a branded thank-you page
+          -->
+          <form
+            name="ai-interest"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thanks.html"
+          >
+            <input type="hidden" name="form-name" value="ai-interest" />
+            <input type="hidden" name="site_domain" value="" />
+            <input type="hidden" name="site_brand" value="" />
+            <p class="hidden-field">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Work email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry">
+                  <option value="">Select one…</option>
+                  <option>Law firm</option>
+                  <option>Real estate</option>
+                  <option>Marketing agency</option>
+                  <option>Accounting</option>
+                  <option>E-commerce</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="task">What's the most repetitive or time-consuming task you'd want help with?</label>
+              <textarea id="task" name="task" rows="4" placeholder="e.g. answering the same customer emails, drafting proposals, pulling data out of PDFs…"></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">Request my free audit</button>
+            <p class="form-fineprint">No spam. No commitment. We'll only use your details to follow up about this.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-brand" data-bind="brand">AI Integration Services</p>
+      <p class="footer-location" data-bind="locationLine"></p>
+      <p class="footer-legal">&copy; <span data-bind="year">2026</span> <span data-bind="brand">AI Integration Services</span>. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/config.js"></script>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>

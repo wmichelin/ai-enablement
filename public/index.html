@@ -41,13 +41,6 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <!--
-      Landing page.
-      Branding/copy is filled in at runtime by /assets/main.js based on the
-      domain it is served from. The lead form below is intentionally STATIC
-      HTML so Netlify's form detection picks it up at deploy time.
-    -->
-
     <header class="site-header">
       <a class="wordmark" href="#top">
         <span class="wordmark-mark" data-bind="wordmark">AI</span>
@@ -148,7 +141,7 @@
         </div>
       </section>
 
-      <!-- Contact / interest form -->
+      <!-- Contact / interest form (Google Forms embed) -->
       <section class="section form-section" id="interest">
         <div class="form-card">
           <h2>Get your free AI workflow audit</h2>
@@ -157,67 +150,7 @@
             We'll follow up to schedule a free, no-pressure audit.
           </p>
 
-          <!--
-            Netlify Forms: this form is detected automatically at deploy time.
-            - data-netlify="true" enables capture
-            - the hidden "form-name" input must match the form's name
-            - "bot-field" is a honeypot for spam
-            - "site_domain" / "site_brand" are filled by main.js so every lead is
-              tagged with which domain/brand it came from
-            - action="thanks.html" sends people to a branded thank-you page
-          -->
-          <form
-            name="ai-interest"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="thanks.html"
-          >
-            <input type="hidden" name="form-name" value="ai-interest" />
-            <input type="hidden" name="site_domain" value="" />
-            <input type="hidden" name="site_brand" value="" />
-            <p class="hidden-field">
-              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="name">Your name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-              </div>
-              <div class="field">
-                <label for="email">Work email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-            </div>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="company">Company</label>
-                <input id="company" name="company" type="text" autocomplete="organization" />
-              </div>
-              <div class="field">
-                <label for="industry">Industry</label>
-                <select id="industry" name="industry">
-                  <option value="">Select one…</option>
-                  <option>Law firm</option>
-                  <option>Real estate</option>
-                  <option>Marketing agency</option>
-                  <option>Accounting</option>
-                  <option>E-commerce</option>
-                  <option>Other</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="task">What's the most repetitive or time-consuming task you'd want help with?</label>
-              <textarea id="task" name="task" rows="4" placeholder="e.g. answering the same customer emails, drafting proposals, pulling data out of PDFs…"></textarea>
-            </div>
-
-            <button class="btn btn-primary btn-block" type="submit">Request my free audit</button>
-            <p class="form-fineprint">No spam. No commitment. We'll only use your details to follow up about this. See our <a href="privacy.html">Privacy Policy</a>.</p>
-          </form>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSct09jEm7KFgqazRBSHuSHnVtyFLjKHujhhD452P3IpsdXMZw/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-block; margin-top: 1rem;">Request my free audit →</a>
         </div>
       </section>
     </main>

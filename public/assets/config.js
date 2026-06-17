@@ -72,3 +72,25 @@ window.SITE_CONFIG = {
 
 /* Fallback used for local dev, Netlify preview URLs, or any unknown host. */
 window.SITE_CONFIG_DEFAULT = window.SITE_CONFIG["ncartificialintelligence.com"];
+
+/*
+ * Resolve which brand config applies to the current request.
+ *
+ * Shared by the early theme script in <head> (so the accent color paints
+ * correctly on first render, with no flash of the default blue) and by main.js
+ * (which fills in copy and SEO once the DOM is ready). Keeping the lookup here
+ * means both run off the exact same logic.
+ */
+window.ALIASES = { nc: "ncartificialintelligence.com", cary: "caryncai.com", rtp: "rtpaisolutions.com" };
+
+window.resolveSiteConfig = function () {
+  var params = new URLSearchParams(window.location.search);
+  // ?site= wins, so every variant is previewable from one URL.
+  var override = (params.get("site") || "").toLowerCase();
+  if (override) {
+    var key = window.ALIASES[override] || override;
+    if (window.SITE_CONFIG[key]) return window.SITE_CONFIG[key];
+  }
+  var host = window.location.hostname.replace(/^www\./, "").toLowerCase();
+  return window.SITE_CONFIG[host] || window.SITE_CONFIG_DEFAULT;
+};

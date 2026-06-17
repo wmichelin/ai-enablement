@@ -39,6 +39,23 @@
     <script type="application/ld+json" id="ld-json">{}</script>
 
     <link rel="stylesheet" href="assets/styles.css" />
+
+    <!-- Per-domain config + early theme.
+         Resolving the brand and applying its accent color here (before the body
+         paints) prevents a flash of the default blue theme before main.js runs. -->
+    <script src="assets/config.js"></script>
+    <script>
+      (function () {
+        var cfg = window.resolveSiteConfig && window.resolveSiteConfig();
+        if (!cfg) return;
+        var root = document.documentElement;
+        if (cfg.accent) root.style.setProperty("--accent", cfg.accent);
+        if (cfg.accentDark) root.style.setProperty("--accent-dark", cfg.accentDark);
+        // Match the mobile browser-chrome color to the brand right away too.
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta && cfg.accent) themeMeta.setAttribute("content", cfg.accent);
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -198,7 +215,8 @@
       <p class="footer-legal">&copy; <span data-bind="year">2026</span> <span data-bind="brand">AI Integration Services</span>. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a></p>
     </footer>
 
-    <script src="assets/config.js"></script>
+    <!-- config.js is loaded in <head> (above) for the early theme; main.js fills
+         in copy and SEO once the DOM is ready. -->
     <script src="assets/main.js"></script>
   </body>
 </html>

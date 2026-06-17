@@ -10,12 +10,6 @@
  *      make the form navigate to the thank-you page without a real backend.
  */
 (function () {
-  var ALIASES = {
-    nc: "ncartificialintelligence.com",
-    cary: "caryncai.com",
-    rtp: "rtpaisolutions.com",
-  };
-
   var params = new URLSearchParams(window.location.search);
 
   // Preview mode: the live demo host, localhost, or an explicit ?preview flag.
@@ -28,12 +22,9 @@
     host === "127.0.0.1";
 
   function pickConfig() {
-    // ?site= wins, so every variant is previewable from one URL.
-    var override = (params.get("site") || "").toLowerCase();
-    if (override) {
-      var key = ALIASES[override] || override;
-      if (window.SITE_CONFIG[key]) return window.SITE_CONFIG[key];
-    }
+    // Same resolver the early <head> theme script uses, so copy and color
+    // always agree on which brand is active.
+    if (window.resolveSiteConfig) return window.resolveSiteConfig();
     return window.SITE_CONFIG[host] || window.SITE_CONFIG_DEFAULT;
   }
 

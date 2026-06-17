@@ -57,7 +57,7 @@
 
     // Keys that are computed rather than read straight from the config.
     var computed = {
-      title: cfg.brand + " — AI for " + cfg.region + " businesses",
+      title: cfg.brand + " \u2014 AI for " + cfg.region + " businesses",
       description: cfg.subhead,
       ogTitle: cfg.headline + " | " + cfg.brand,
       canonical: base,
@@ -135,7 +135,7 @@
       var bar = document.createElement("div");
       bar.className = "preview-banner";
       bar.innerHTML =
-        "Preview demo — form submissions are disabled here. " +
+        "Preview demo \u2014 form submissions are disabled here. " +
         "Switch variant: " +
         '<a href="?site=nc">NC</a> · ' +
         '<a href="?site=cary">Cary</a> · ' +

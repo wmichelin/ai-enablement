@@ -3,7 +3,7 @@
  *
  * The same static page is served from all three domains. Here we:
  *   1. Pick the config for the current hostname (or a ?site= override).
- *   2. Fill every [data-bind] slot â copy, accent color, and SEO meta tags.
+ *   2. Fill every [data-bind] slot — copy, accent color, and SEO meta tags.
  *   3. Inject JSON-LD structured data for local SEO.
  *   4. Tag the lead form with the source domain so submissions are segmented.
  *   5. In "preview mode" (e.g. the GitHub Pages demo) mark the page noindex and
@@ -48,7 +48,7 @@
 
     // Keys that are computed rather than read straight from the config.
     var computed = {
-      title: cfg.brand + " â AI for " + cfg.region + " businesses",
+      title: cfg.brand + " — AI for " + cfg.region + " businesses",
       description: cfg.subhead,
       ogTitle: cfg.headline + " | " + cfg.brand,
       canonical: base,
@@ -157,7 +157,7 @@
       var bar = document.createElement("div");
       bar.className = "preview-banner";
       bar.innerHTML =
-        "Preview demo â form submissions are disabled here. " +
+        "Preview demo — form submissions are disabled here. " +
         "Switch variant: " +
         '<a href="?site=nc">NC</a> Â· ' +
         '<a href="?site=cary">Cary</a> Â· ' +

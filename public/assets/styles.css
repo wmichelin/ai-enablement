@@ -212,6 +212,43 @@ a {
   text-align: center;
 }
 
+/* ---------- Legal / prose (privacy policy) ---------- */
+.legal {
+  max-width: 760px;
+  text-align: left;
+  color: var(--ink-soft);
+}
+
+.legal-meta {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+
+.legal h2 {
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin: 34px 0 10px;
+}
+
+.legal p,
+.legal li {
+  font-size: 1.02rem;
+}
+
+.legal ul {
+  padding-left: 1.2em;
+  margin: 0 0 12px;
+}
+
+.legal li {
+  margin-bottom: 8px;
+}
+
+.legal strong {
+  color: var(--ink);
+}
+
 /* ---------- Cards ---------- */
 .cards {
   display: grid;

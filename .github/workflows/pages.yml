@@ -9,6 +9,9 @@ on:
   push:
     branches:
       - master
+      # Temporary: lets this feature branch publish a live staging preview to
+      # the GitHub Pages host. Remove once merged to master.
+      - claude/privacy-policy-necessity-7lwsor
   workflow_dispatch:
 
 permissions:

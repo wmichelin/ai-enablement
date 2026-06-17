@@ -17,9 +17,9 @@ window.SITE_CONFIG = {
     accentDark: "#1e40af",
     headline: "Practical AI for North Carolina businesses",
     subhead:
-      "We help small and medium businesses across North Carolina put large language models to work on real, time-consuming work — without the hype, the risk, or an in-house AI team.",
-    locationLine: "Working with businesses across North Carolina.",
-    ctaNote: "Founding-client rates for the first NC businesses we partner with.",
+      "We're a local North Carolina team that helps small and medium businesses put large language models to work on real, time-consuming work — and we'll sit down with you in person, without the hype, the risk, or an in-house AI team.",
+    locationLine: "A local North Carolina team — happy to meet you in person.",
+    ctaNote: "Local and in person. Founding-client rates for the first NC businesses we partner with.",
     // SEO
     keywords:
       "AI consulting North Carolina, LLM integration, AI for small business NC, ChatGPT for business, AI automation North Carolina",
@@ -37,9 +37,9 @@ window.SITE_CONFIG = {
     accentDark: "#0f766e",
     headline: "AI that actually works for Cary businesses",
     subhead:
-      "A local partner helping Cary and Triangle-area small businesses adopt large language models for the repetitive text and document work eating up your team's day.",
-    locationLine: "Based in Cary, NC — serving local businesses face to face.",
-    ctaNote: "Founding-client rates for the first Cary businesses we partner with.",
+      "A local Cary partner helping Triangle-area small businesses adopt large language models for the repetitive text and document work eating up your team's day — and we'll meet you in person, right here in town.",
+    locationLine: "Based in Cary, NC — we meet local businesses face to face.",
+    ctaNote: "Based in Cary — let's meet in person. Founding-client rates for the first Cary businesses we partner with.",
     // SEO
     keywords:
       "AI consultant Cary NC, AI for small business Cary, LLM integration Cary, AI automation Triangle NC, ChatGPT consultant Cary",
@@ -57,9 +57,9 @@ window.SITE_CONFIG = {
     accentDark: "#4f46e5",
     headline: "AI solutions for Research Triangle companies",
     subhead:
-      "We help growing companies in RTP and across the Triangle identify high-ROI workflows and ship dependable, secure LLM integrations — measured by results, not slideware.",
-    locationLine: "Serving the Research Triangle Park region.",
-    ctaNote: "Founding-client rates for our first Triangle partners.",
+      "We're a local Triangle team helping growing companies in RTP identify high-ROI workflows and ship dependable, secure LLM integrations — on-site and in person, measured by results, not slideware.",
+    locationLine: "Local to the Research Triangle Park region — we'll meet you on-site.",
+    ctaNote: "Local and on-site. Founding-client rates for our first Triangle partners.",
     // SEO
     keywords:
       "AI solutions RTP, LLM integration Research Triangle, AI consulting Durham NC, enterprise AI Triangle NC, AI automation RTP",

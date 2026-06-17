@@ -110,7 +110,7 @@
         if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
         fetch('https://docs.google.com/forms/d/e/1FAIpQLSct09jEm7KFgqazRBSHuSHnVtyFLjKHujhhD452P3IpsdXMZw/formResponse', {
           method: 'POST',
-          body: new FormData(auditForm),
+          body: (function() { var fd = new FormData(auditForm); fd.append('pageHistory', '0,1'); return fd; })(),
           mode: 'no-cors'
         }).then(function() {
           var site = new URLSearchParams(window.location.search).get('site');

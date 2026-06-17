@@ -83,6 +83,12 @@
       }
     });
 
+    // The privacy page shows a brand contact address as both link text and href.
+    var mail = document.querySelector("a.contact-email");
+    if (mail && cfg.privacyEmail) {
+      mail.setAttribute("href", "mailto:" + cfg.privacyEmail);
+    }
+
     injectStructuredData(cfg, base, ogImageAbs);
 
     // Tag the lead form so every submission records its source domain/brand.

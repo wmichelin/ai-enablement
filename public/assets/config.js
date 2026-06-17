@@ -26,6 +26,7 @@ window.SITE_CONFIG = {
     areaServed: "North Carolina",
     addressLocality: "Raleigh",
     ogImage: "assets/og-nc.png",
+    privacyEmail: "wmichelin+nc@gmail.com",
   },
 
   "caryncai.com": {
@@ -45,6 +46,7 @@ window.SITE_CONFIG = {
     areaServed: "Cary, North Carolina",
     addressLocality: "Cary",
     ogImage: "assets/og-cary.png",
+    privacyEmail: "wmichelin+cary@gmail.com",
   },
 
   "rtpaisolutions.com": {
@@ -64,6 +66,7 @@ window.SITE_CONFIG = {
     areaServed: "Research Triangle Park, North Carolina",
     addressLocality: "Durham",
     ogImage: "assets/og-rtp.png",
+    privacyEmail: "wmichelin+rtp@gmail.com",
   },
 };
 

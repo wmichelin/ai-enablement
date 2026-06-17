@@ -97,12 +97,29 @@
     if (domainField) domainField.value = window.location.hostname;
     if (brandField) brandField.value = cfg.brand;
 
-    // Append source-site param to the Google Forms link
-    var formLink = document.querySelector('#interest a[href*="google.com/forms"]');
-    if (formLink) {
-      var url = new URL(formLink.href);
-      url.searchParams.set("entry.1677929165", window.location.hostname);
-      formLink.href = url.toString();
+    // Set hidden source-site field
+    var sourceField = document.getElementById('source-site');
+    if (sourceField) sourceField.value = window.location.hostname;
+
+    // Submit inline form to Google Forms via fetch
+    var auditForm = document.getElementById('audit-form');
+    if (auditForm) {
+      auditForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = auditForm.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+        fetch('https://docs.google.com/forms/d/e/1FAIpQLSct09jEm7KFgqazRBSHuSHnVtyFLjKHujhhD452P3IpsdXMZw/formResponse', {
+          method: 'POST',
+          body: new FormData(auditForm),
+          mode: 'no-cors'
+        }).then(function() {
+          var site = new URLSearchParams(window.location.search).get('site');
+          window.location.href = 'thanks.html' + (site ? '?site=' + site : '');
+        }).catch(function() {
+          var site = new URLSearchParams(window.location.search).get('site');
+          window.location.href = 'thanks.html' + (site ? '?site=' + site : '');
+        });
+      });
     }
 
     if (IS_PREVIEW) enablePreviewMode(cfg);
@@ -159,14 +176,7 @@
 
     // The real form posts to Netlify; in preview there's no backend, so just
     // route to the (branded) thank-you page instead of erroring on POST.
-    var form = document.querySelector('form[name="ai-interest"]');
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var site = new URLSearchParams(window.location.search).get("site");
-        window.location.href = "thanks.html" + (site ? "?site=" + site : "");
-      });
-    }
+
   }
 
   function init() {

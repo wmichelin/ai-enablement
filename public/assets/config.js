@@ -57,7 +57,7 @@ window.SITE_CONFIG = {
     accentDark: "#4f46e5",
     headline: "AI solutions for Research Triangle companies",
     subhead:
-      "We're a local Triangle team helping growing companies in RTP identify high-ROI workflows and ship dependable, secure LLM integrations — on-site and in person, measured by results, not slideware.",
+      "A local Triangle team helping growing RTP companies turn high-ROI workflows into secure, dependable LLM integrations — built on-site, in person, and proven by results.",
     locationLine: "Local to the Research Triangle Park region — we'll meet you on-site.",
     ctaNote: "Local and on-site. Founding-client rates for our first Triangle partners.",
     // SEO
